@@ -1,14 +1,11 @@
-#include <stdio.h>
-void displayString(char str[]);
+#include <iostream>
+using namespace std;
 
-int main()
+int main(int argc, char *argv[])
 {
-    char str[50];
-    gets(str);
-    displayString(str);     // Passing string c to function.
-    return 0;
-}
-void displayString(char str[]){
-    printf("Hello %s!", str);
-    //puts(str);
+  // start from 1 to ignore script name; argv[0] will be a name of processing file.
+  for (int i = 1; i < argc; i++) {
+    printf ("argv[%i]: %s\n", i, argv[i]);
+  }
+  return 0;
 }
